@@ -67,7 +67,7 @@ def plot_similar_images(similar_set, plot_labels=True):
     plot_size = 640
     imgs, batch_idx, plot_boxes, plot_masks, plot_kpts = [], [], [], [], []
     for i, imf in enumerate(images):
-        im = cv2.imread(imf)
+        im = cv2.imread(imf, cv2.IMREAD_UNCHANGED)
         im = cv2.cvtColor(im, cv2.COLOR_BGR2RGB)
         h, w = im.shape[:2]
         r = min(plot_size / h, plot_size / w)
